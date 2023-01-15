@@ -56,6 +56,11 @@
             value = "cb0cc6271c724be498f5545af4636e3d"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "API_URL"
+            value = "https://api.rawg.io/api/games"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
