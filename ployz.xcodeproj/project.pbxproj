@@ -9,23 +9,40 @@
 /* Begin PBXBuildFile section */
 		A4C0FB72297416E200B563BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB71297416E200B563BE /* AppDelegate.swift */; };
 		A4C0FB74297416E200B563BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB73297416E200B563BE /* SceneDelegate.swift */; };
-		A4C0FB76297416E200B563BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB75297416E200B563BE /* ViewController.swift */; };
 		A4C0FB79297416E200B563BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C0FB77297416E200B563BE /* Main.storyboard */; };
 		A4C0FB7C297416E200B563BE /* ployz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB7A297416E200B563BE /* ployz.xcdatamodeld */; };
 		A4C0FB7E297416E300B563BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4C0FB7D297416E300B563BE /* Assets.xcassets */; };
 		A4C0FB81297416E300B563BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C0FB7F297416E300B563BE /* LaunchScreen.storyboard */; };
+		A4C0FB902974356A00B563BE /* HomepageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB8F2974356A00B563BE /* HomepageModel.swift */; };
+		A4C0FB92297435BD00B563BE /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB91297435BD00B563BE /* HomepageViewController.swift */; };
+		A4C0FB94297435CB00B563BE /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB93297435CB00B563BE /* HomepageViewModel.swift */; };
+		A4C0FB9A2974395100B563BE /* FavoritesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB992974395100B563BE /* FavoritesModel.swift */; };
+		A4C0FB9C297439D300B563BE /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB9B297439D200B563BE /* FavoritesView.swift */; };
+		A4C0FB9E297439EF00B563BE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB9D297439EF00B563BE /* FavoritesViewModel.swift */; };
+		A4C0FBA029747E7B00B563BE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB9F29747E7B00B563BE /* NetworkManager.swift */; };
+		A4C0FBAA2974905700B563BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A4C0FBA92974905700B563BE /* Alamofire */; };
+		A4C0FBAC297496FD00B563BE /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FBAB297496FD00B563BE /* GamesTableViewCell.swift */; };
+		A4C0FBAE2974A16D00B563BE /* GamesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C0FBAD2974A16D00B563BE /* GamesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4C0FB6E297416E200B563BE /* ployz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ployz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C0FB71297416E200B563BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C0FB73297416E200B563BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4C0FB75297416E200B563BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4C0FB78297416E200B563BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4C0FB7B297416E200B563BE /* ployz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ployz.xcdatamodel; sourceTree = "<group>"; };
 		A4C0FB7D297416E300B563BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4C0FB80297416E300B563BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4C0FB82297416E300B563BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4C0FB8F2974356A00B563BE /* HomepageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageModel.swift; sourceTree = "<group>"; };
+		A4C0FB91297435BD00B563BE /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		A4C0FB93297435CB00B563BE /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
+		A4C0FB992974395100B563BE /* FavoritesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModel.swift; sourceTree = "<group>"; };
+		A4C0FB9B297439D200B563BE /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		A4C0FB9D297439EF00B563BE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		A4C0FB9F29747E7B00B563BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A4C0FBAB297496FD00B563BE /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
+		A4C0FBAD2974A16D00B563BE /* GamesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C0FBAA2974905700B563BE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +76,112 @@
 		A4C0FB70297416E200B563BE /* ployz */ = {
 			isa = PBXGroup;
 			children = (
-				A4C0FB71297416E200B563BE /* AppDelegate.swift */,
-				A4C0FB73297416E200B563BE /* SceneDelegate.swift */,
-				A4C0FB75297416E200B563BE /* ViewController.swift */,
-				A4C0FB77297416E200B563BE /* Main.storyboard */,
-				A4C0FB7D297416E300B563BE /* Assets.xcassets */,
-				A4C0FB7F297416E300B563BE /* LaunchScreen.storyboard */,
+				A4C0FB8A297433FD00B563BE /* Scene */,
+				A4C0FB89297433F500B563BE /* Supporting Files */,
+				A4C0FB88297433CD00B563BE /* App */,
 				A4C0FB82297416E300B563BE /* Info.plist */,
 				A4C0FB7A297416E200B563BE /* ployz.xcdatamodeld */,
 			);
 			path = ployz;
+			sourceTree = "<group>";
+		};
+		A4C0FB88297433CD00B563BE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB9F29747E7B00B563BE /* NetworkManager.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A4C0FB89297433F500B563BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB71297416E200B563BE /* AppDelegate.swift */,
+				A4C0FB73297416E200B563BE /* SceneDelegate.swift */,
+				A4C0FB77297416E200B563BE /* Main.storyboard */,
+				A4C0FB7F297416E300B563BE /* LaunchScreen.storyboard */,
+				A4C0FB7D297416E300B563BE /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4C0FB8A297433FD00B563BE /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB8B2974344500B563BE /* Homepage */,
+				A4C0FB952974369A00B563BE /* Favorites */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		A4C0FB8B2974344500B563BE /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB8C297434B600B563BE /* Model */,
+				A4C0FB8D297434D300B563BE /* View */,
+				A4C0FB8E297434E300B563BE /* ViewModel */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		A4C0FB8C297434B600B563BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB8F2974356A00B563BE /* HomepageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4C0FB8D297434D300B563BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB91297435BD00B563BE /* HomepageViewController.swift */,
+				A4C0FBAB297496FD00B563BE /* GamesTableViewCell.swift */,
+				A4C0FBAD2974A16D00B563BE /* GamesTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4C0FB8E297434E300B563BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB93297435CB00B563BE /* HomepageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A4C0FB952974369A00B563BE /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB98297436C000B563BE /* Model */,
+				A4C0FB97297436B900B563BE /* View */,
+				A4C0FB96297436B300B563BE /* ViewModel */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		A4C0FB96297436B300B563BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB9D297439EF00B563BE /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A4C0FB97297436B900B563BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB9B297439D200B563BE /* FavoritesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4C0FB98297436C000B563BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4C0FB992974395100B563BE /* FavoritesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +200,9 @@
 			dependencies = (
 			);
 			name = ployz;
+			packageProductDependencies = (
+				A4C0FBA92974905700B563BE /* Alamofire */,
+			);
 			productName = ployz;
 			productReference = A4C0FB6E297416E200B563BE /* ployz.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +231,9 @@
 				Base,
 			);
 			mainGroup = A4C0FB65297416E100B563BE;
+			packageReferences = (
+				A4C0FBA82974905700B563BE /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A4C0FB6F297416E200B563BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +251,7 @@
 				A4C0FB81297416E300B563BE /* LaunchScreen.storyboard in Resources */,
 				A4C0FB7E297416E300B563BE /* Assets.xcassets in Resources */,
 				A4C0FB79297416E200B563BE /* Main.storyboard in Resources */,
+				A4C0FBAE2974A16D00B563BE /* GamesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +262,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C0FB92297435BD00B563BE /* HomepageViewController.swift in Sources */,
 				A4C0FB7C297416E200B563BE /* ployz.xcdatamodeld in Sources */,
-				A4C0FB76297416E200B563BE /* ViewController.swift in Sources */,
+				A4C0FBA029747E7B00B563BE /* NetworkManager.swift in Sources */,
+				A4C0FB94297435CB00B563BE /* HomepageViewModel.swift in Sources */,
+				A4C0FB9E297439EF00B563BE /* FavoritesViewModel.swift in Sources */,
+				A4C0FBAC297496FD00B563BE /* GamesTableViewCell.swift in Sources */,
 				A4C0FB72297416E200B563BE /* AppDelegate.swift in Sources */,
+				A4C0FB9C297439D300B563BE /* FavoritesView.swift in Sources */,
 				A4C0FB74297416E200B563BE /* SceneDelegate.swift in Sources */,
+				A4C0FB902974356A00B563BE /* HomepageModel.swift in Sources */,
+				A4C0FB9A2974395100B563BE /* FavoritesModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +422,8 @@
 				DEVELOPMENT_TEAM = 8L6Q7426QV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ployz/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ployz;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -322,6 +452,8 @@
 				DEVELOPMENT_TEAM = 8L6Q7426QV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ployz/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Ployz;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -362,6 +494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A4C0FBA82974905700B563BE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A4C0FBA92974905700B563BE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A4C0FBA82974905700B563BE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A4C0FB7A297416E200B563BE /* ployz.xcdatamodeld */ = {
