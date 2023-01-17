@@ -18,22 +18,35 @@ class HomepageViewController: UIViewController {
         }
     }
     
+    var viewModel: HomepageViewModelProtocol = HomepageViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        viewModel.delegate = self
+        viewModel.fetchPopularGames()
     }
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getPopularGamesCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gamesTableCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "gamesTableCell", for: indexPath) as? GamesTableViewCell,
+              let gameObject = viewModel.getGames(at: indexPath.row) else { return UITableViewCell() }
         
+        DispatchQueue.main.async {
+            cell.setCell(gameObject)
+        }
         
         return cell
     }
-    
-    
+}
+
+extension HomepageViewController: HomepageViewModelDelegate {
+    func didGamesLoad() {
+        gamesTableView.reloadData()
+    }
 }
