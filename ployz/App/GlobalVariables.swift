@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+class GlobalVariables {
+    static let sharedInstance = GlobalVariables()
+    private init(){}
+    
+    var isFavoriteChanged = false
+}
