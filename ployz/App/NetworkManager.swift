@@ -16,6 +16,11 @@ class NetworkManager {
         }
     }
     
+    static func getGameDetails(gameId: Int, completionHandler: @escaping (GameDetailsModel?, Error?) -> Void) {
+        let requestURL = "\(ProcessInfo.processInfo.environment["API_URL"]!)/\(String(gameId))?key=\(ProcessInfo.processInfo.environment["API_KEY"]!)"
+        NetworkManager.responseHandler(requestURL: requestURL, responseType: GameDetailsModel.self, completionHandler: completionHandler)
+    }
+    
     static private func responseHandler<T: Decodable>(requestURL: String, responseType: T.Type, completionHandler: @escaping (T?, Error?) -> Void) {
         AF.request(requestURL).response { response in
             guard let data = response.value else {
@@ -27,7 +32,6 @@ class NetworkManager {
             let decoder = JSONDecoder()
             do {
                 let gamesObjectResponse = try decoder.decode(T.self, from: data!)
-                print(gamesObjectResponse)
                 DispatchQueue.main.async {
                     completionHandler(gamesObjectResponse, nil)
                 }
