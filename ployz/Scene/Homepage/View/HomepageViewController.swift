@@ -26,6 +26,17 @@ class HomepageViewController: UIViewController {
         viewModel.delegate = self
         viewModel.fetchPopularGames()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+            case "homepageToGameDetail":
+                if let gameId = sender as? Int {
+                    let target = segue.destination as! DetailsViewController
+                    target.gameId = gameId
+                }
+            default:
+                print("ERROR")
+        }
+    }
 }
 
 extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
@@ -42,6 +53,12 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let gameId = viewModel.getGameId(at: indexPath.row) {
+            performSegue(withIdentifier: "homepageToGameDetail", sender: gameId)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
