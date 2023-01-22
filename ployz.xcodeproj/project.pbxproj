@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A41ADBC8297875B900EBB2E9 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41ADBC7297875B900EBB2E9 /* DetailsModel.swift */; };
+		A41ADBCA297875CE00EBB2E9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41ADBC9297875CE00EBB2E9 /* DetailsViewController.swift */; };
+		A41ADBCC297875FE00EBB2E9 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41ADBCB297875FE00EBB2E9 /* DetailsViewModel.swift */; };
+		A41ADBCE2978A15200EBB2E9 /* AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41ADBCD2978A15200EBB2E9 /* AppExtensions.swift */; };
 		A481A326297728E1002EF086 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A481A325297728E1002EF086 /* Kingfisher */; };
 		A4C0FB72297416E200B563BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB71297416E200B563BE /* AppDelegate.swift */; };
 		A4C0FB74297416E200B563BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FB73297416E200B563BE /* SceneDelegate.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A41ADBC7297875B900EBB2E9 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
+		A41ADBC9297875CE00EBB2E9 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		A41ADBCB297875FE00EBB2E9 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		A41ADBCD2978A15200EBB2E9 /* AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtensions.swift; sourceTree = "<group>"; };
 		A4C0FB6E297416E200B563BE /* ployz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ployz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C0FB71297416E200B563BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C0FB73297416E200B563BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +67,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A41ADBC32978756400EBB2E9 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A41ADBC6297875A600EBB2E9 /* Model */,
+				A41ADBC52978759A00EBB2E9 /* View */,
+				A41ADBC42978759300EBB2E9 /* ViewModel */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		A41ADBC42978759300EBB2E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A41ADBCB297875FE00EBB2E9 /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A41ADBC52978759A00EBB2E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A41ADBC9297875CE00EBB2E9 /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A41ADBC6297875A600EBB2E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A41ADBC7297875B900EBB2E9 /* DetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A4C0FB65297416E100B563BE = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A4C0FB9F29747E7B00B563BE /* NetworkManager.swift */,
+				A41ADBCD2978A15200EBB2E9 /* AppExtensions.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -111,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A4C0FB8B2974344500B563BE /* Homepage */,
+				A41ADBC32978756400EBB2E9 /* Details */,
 				A4C0FB952974369A00B563BE /* Favorites */,
 			);
 			path = Scene;
@@ -266,15 +310,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A41ADBCE2978A15200EBB2E9 /* AppExtensions.swift in Sources */,
 				A4C0FB92297435BD00B563BE /* HomepageViewController.swift in Sources */,
 				A4C0FB7C297416E200B563BE /* ployz.xcdatamodeld in Sources */,
 				A4C0FBA029747E7B00B563BE /* NetworkManager.swift in Sources */,
 				A4C0FB94297435CB00B563BE /* HomepageViewModel.swift in Sources */,
+				A41ADBC8297875B900EBB2E9 /* DetailsModel.swift in Sources */,
 				A4C0FB9E297439EF00B563BE /* FavoritesViewModel.swift in Sources */,
+				A41ADBCA297875CE00EBB2E9 /* DetailsViewController.swift in Sources */,
 				A4C0FBAC297496FD00B563BE /* GamesTableViewCell.swift in Sources */,
 				A4C0FB72297416E200B563BE /* AppDelegate.swift in Sources */,
 				A4C0FB9C297439D300B563BE /* FavoritesView.swift in Sources */,
 				A4C0FB74297416E200B563BE /* SceneDelegate.swift in Sources */,
+				A41ADBCC297875FE00EBB2E9 /* DetailsViewModel.swift in Sources */,
 				A4C0FB902974356A00B563BE /* HomepageModel.swift in Sources */,
 				A4C0FB9A2974395100B563BE /* FavoritesModel.swift in Sources */,
 			);
