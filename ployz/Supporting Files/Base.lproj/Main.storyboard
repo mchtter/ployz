@@ -122,34 +122,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-RK-bZ6">
-                                <rect key="frame" x="0.0" y="20" width="393" height="393"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-41-fYU">
-                                <rect key="frame" x="0.0" y="411" width="393" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-41-fYU">
+                                <rect key="frame" x="16" y="401" width="289" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="J36-Af-9KD"/>
+                                    <constraint firstAttribute="height" constant="80" id="dEv-Q8-akK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gQe-Qa-R3C">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gQe-Qa-R3C">
                                 <rect key="frame" x="0.0" y="489" width="393" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjZ-Pz-8UW">
+                                <rect key="frame" x="313" y="401" width="80" height="80"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="likeButtonTapped:" destination="9NI-46-GEC" eventType="touchUpInside" id="D53-NJ-9ya"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-RK-bZ6">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zu3-K4-din"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gQe-Qa-R3C" firstAttribute="trailing" secondItem="mjZ-Pz-8UW" secondAttribute="trailing" id="2ap-Eo-ejv"/>
+                            <constraint firstAttribute="bottom" secondItem="Pdg-41-fYU" secondAttribute="bottom" constant="302" id="3Rk-Da-qZe"/>
+                            <constraint firstItem="mjZ-Pz-8UW" firstAttribute="bottom" secondItem="Pdg-41-fYU" secondAttribute="bottom" id="9Bn-8K-bvd"/>
+                            <constraint firstItem="Pdg-41-fYU" firstAttribute="leading" secondItem="fDe-Py-2wZ" secondAttribute="leadingMargin" id="9L6-tY-PIA"/>
+                            <constraint firstItem="gQe-Qa-R3C" firstAttribute="bottom" secondItem="zu3-K4-din" secondAttribute="bottom" id="CxK-7l-6z5"/>
+                            <constraint firstItem="HUi-RK-bZ6" firstAttribute="leading" secondItem="fDe-Py-2wZ" secondAttribute="leading" id="EOj-Lt-hsV"/>
+                            <constraint firstItem="mjZ-Pz-8UW" firstAttribute="leading" secondItem="Pdg-41-fYU" secondAttribute="trailing" constant="8" id="HTb-0q-kRO"/>
+                            <constraint firstItem="mjZ-Pz-8UW" firstAttribute="top" secondItem="Pdg-41-fYU" secondAttribute="top" id="VmZ-5e-On5"/>
+                            <constraint firstItem="Pdg-41-fYU" firstAttribute="top" secondItem="HUi-RK-bZ6" secondAttribute="bottom" constant="8" symbolic="YES" id="XGH-XT-9OO"/>
+                            <constraint firstItem="mjZ-Pz-8UW" firstAttribute="trailing" secondItem="zu3-K4-din" secondAttribute="trailing" id="YZe-0v-mWR"/>
+                            <constraint firstItem="gQe-Qa-R3C" firstAttribute="top" secondItem="Pdg-41-fYU" secondAttribute="bottom" constant="8" id="ega-se-Pjz"/>
+                            <constraint firstItem="gQe-Qa-R3C" firstAttribute="leading" secondItem="HUi-RK-bZ6" secondAttribute="leading" id="fKV-hZ-fDq"/>
+                            <constraint firstItem="HUi-RK-bZ6" firstAttribute="top" secondItem="zu3-K4-din" secondAttribute="top" id="saR-1a-Lvt"/>
+                            <constraint firstItem="HUi-RK-bZ6" firstAttribute="trailing" secondItem="mjZ-Pz-8UW" secondAttribute="trailing" id="vRq-op-rka"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="gameDescription" destination="gQe-Qa-R3C" id="JUn-PE-J4C"/>
                         <outlet property="gameImage" destination="HUi-RK-bZ6" id="IGU-A4-01Y"/>
                         <outlet property="gameTitle" destination="Pdg-41-fYU" id="XTr-Ef-ho2"/>
+                        <outlet property="likeButton" destination="mjZ-Pz-8UW" id="4bi-Z0-ek6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJg-p8-DoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
