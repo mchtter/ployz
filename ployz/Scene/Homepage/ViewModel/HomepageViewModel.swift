@@ -25,11 +25,15 @@ class HomepageViewModel: HomepageViewModelProtocol {
     }
     
     func getGames(at index: Int) -> Result? {
-        popularGames?[index]
+        return popularGames?[index]
     }
     
     func getPopularGamesCount() -> Int {
         return popularGames?.count ?? 0
+    }
+    
+    func getGameId(at index: Int) -> Int? {
+        return popularGames?[index].id
     }
 }
 
@@ -38,6 +42,7 @@ protocol HomepageViewModelProtocol {
     func fetchPopularGames()
     func getGames(at index: Int) -> Result?
     func getPopularGamesCount() -> Int
+    func getGameId(at index: Int) -> Int?
 }
 
 protocol HomepageViewModelDelegate: AnyObject {
