@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sXM-5e-xZ8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -223,11 +224,18 @@
                             <constraint firstItem="ol5-Wa-tvg" firstAttribute="trailing" secondItem="bBU-4n-ABE" secondAttribute="trailing" constant="16" id="wR0-bW-9DN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ployz" id="JAr-oJ-r3f"/>
+                    <navigationItem key="navigationItem" title="Ployz" id="JAr-oJ-r3f">
+                        <barButtonItem key="rightBarButtonItem" image="arrow.down.square.fill" catalog="system" id="yei-xM-iyH">
+                            <connections>
+                                <action selector="orderButtonAction:" destination="W6h-j6-o8U" id="dmp-QB-Cnf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="P6o-Pb-xWv" id="0so-Zu-KOp"/>
                         <outlet property="apiKeyErrorLabel" destination="bBU-4n-ABE" id="4cz-9f-TfE"/>
                         <outlet property="gamesTableView" destination="mKl-or-Gwd" id="GOd-9r-KRE"/>
+                        <outlet property="orderButton" destination="yei-xM-iyH" id="rHr-HM-iJF"/>
                         <segue destination="9NI-46-GEC" kind="presentation" identifier="homepageToGameDetail" id="IMz-oY-WNY"/>
                     </connections>
                 </viewController>
@@ -305,6 +313,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down.square.fill" catalog="system" width="128" height="114"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
