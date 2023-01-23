@@ -34,6 +34,39 @@ final class DetailsViewModel: DetailsViewModelProtocol {
     func getGameDescription() -> String? {
         return gameDetails?.description ?? ""
     }
+    
+    func favoriteHandler() -> Bool? {
+        if let gameId = gameDetails?.id {
+            if let isFavorite = isFavoriteGame(gameId) {
+                if isFavorite { return unlikeGame() }
+                return likeGame()
+            }
+            return nil
+        }
+        return nil
+    }
+    
+    func isFavoriteGame(_ id: Int) -> Bool? {
+        FavoritesCoreData.shared.isFavorite(id)
+    }
+    
+    private func likeGame() -> Bool {
+        if let gameId = gameDetails?.id, let imageId = URL(string: gameDetails?.backgroundImage ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg")?.lastPathComponent{
+            guard FavoritesCoreData.shared.setFavorite(gameId: gameId, imageId: imageId) != nil else {return !true}
+            GlobalVariables.sharedInstance.isFavoriteChanged = true
+            return true
+        }
+        return !true
+    }
+    
+    private func unlikeGame() -> Bool {
+        if let gameId = gameDetails?.id{
+            guard FavoritesCoreData.shared.removeFavoriteGameById(id: gameId) != nil else {return !false}
+            GlobalVariables.sharedInstance.isFavoriteChanged = true
+            return false
+        }
+        return !false
+    }
 }
 
 protocol DetailsViewModelProtocol {
@@ -43,6 +76,8 @@ protocol DetailsViewModelProtocol {
     func getGameImage() -> String
     func getGameTitle() -> String?
     func getGameDescription() -> String?
+    func favoriteHandler() -> Bool?
+    func isFavoriteGame(_ id: Int) -> Bool?
 }
 
 protocol DetailsViewModelDelegate: AnyObject {
