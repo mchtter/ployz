@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritesCell" rowHeight="175" id="56f-Sx-H0A" customClass="FavoritesTableViewCell" customModule="ployz" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="175"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="56f-Sx-H0A" id="WzI-py-7Me">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="175"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0qg-ll-d9Q">
+                        <rect key="frame" x="1" y="2" width="170" height="171"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juN-lt-OZg">
+                        <rect key="frame" x="249" y="97.666666666666671" width="71" height="34.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="71" id="7f8-IC-5xn"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThX-Sl-guz">
+                        <rect key="frame" x="190" y="57.000000000000007" width="200" height="20.333333333333336"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="rSV-A3-5Ef"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="ThX-Sl-guz" secondAttribute="trailing" constant="3" id="CEN-jd-SHF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="juN-lt-OZg" secondAttribute="trailing" constant="53" id="caM-RV-TDO"/>
+                    <constraint firstItem="ThX-Sl-guz" firstAttribute="top" secondItem="WzI-py-7Me" secondAttribute="top" constant="57" id="g8o-7u-4un"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="juN-lt-OZg" secondAttribute="bottom" constant="32" id="hem-LB-8xT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="gameImage" destination="0qg-ll-d9Q" id="rZv-b6-nLC"/>
+                <outlet property="gameTitle" destination="ThX-Sl-guz" id="jfk-M1-c7Q"/>
+            </connections>
+            <point key="canvasLocation" x="188.54961832061068" y="-99.647887323943664"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+    </resources>
+</document>

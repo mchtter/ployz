@@ -91,6 +91,63 @@ struct GameDetailsModel: Decodable {
         case clip
         case descriptionRaw
     }
+    
+    init(id: Int?) {
+        self.id = id
+        self.slug = nil
+        self.name = nil
+        self.nameOriginal = nil
+        self.description = nil
+        self.metacritic = nil
+        self.metacriticPlatforms = nil
+        self.released = nil
+        self.tba = nil
+        self.updated = nil
+        self.backgroundImage = nil
+        self.backgroundImageAdditional = nil
+        self.website = nil
+        self.rating = nil
+        self.ratingTop = nil
+        self.ratings = nil
+        self.reactions = nil
+        self.added = nil
+        self.addedByStatus = nil
+        self.playtime = nil
+        self.screenshotsCount = nil
+        self.moviesCount = nil
+        self.creatorsCount = nil
+        self.achievementsCount = nil
+        self.parentAchievementsCount = nil
+        self.redditURL = nil
+        self.redditName = nil
+        self.redditDescription = nil
+        self.redditLogo = nil
+        self.redditCount = nil
+        self.twitchCount = nil
+        self.youtubeCount = nil
+        self.reviewsTextCount = nil
+        self.ratingsCount = nil
+        self.suggestionsCount = nil
+        self.alternativeNames = nil
+        self.metacriticURL = nil
+        self.parentsCount = nil
+        self.additionsCount = nil
+        self.gameSeriesCount = nil
+        self.userGame = nil
+        self.reviewsCount = nil
+        self.saturatedColor = nil
+        self.dominantColor = nil
+        self.parentPlatforms = nil
+        self.platforms = nil
+        self.stores = nil
+        self.developers = nil
+        self.genres = nil
+        self.tags = nil
+        self.publishers = nil
+        self.esrbRating = nil
+        self.clip = nil
+        self.descriptionRaw = nil
+    }
 }
 
 // MARK: - Developer
