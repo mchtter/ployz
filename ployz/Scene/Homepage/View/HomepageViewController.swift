@@ -8,7 +8,10 @@
 import UIKit
 
 class HomepageViewController: UIViewController {
+    var viewModel: HomepageViewModelProtocol = HomepageViewModel()
+    var orderByName = false
     
+    @IBOutlet weak var orderButton: UIBarButtonItem!
     @IBOutlet weak var apiKeyErrorLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var gamesTableView: UITableView! {
@@ -20,7 +23,17 @@ class HomepageViewController: UIViewController {
         }
     }
     
-    var viewModel: HomepageViewModelProtocol = HomepageViewModel()
+    @IBAction func orderButtonAction(_ sender: Any) {
+        if (orderByName == false){
+            viewModel.orderByName(status: orderByName)
+            orderButton.image = UIImage(systemName: "arrow.up.square.fill")
+            orderByName = true
+        } else {
+            viewModel.orderByName(status: orderByName)
+            orderButton.image = UIImage(systemName: "arrow.down.square.fill")
+            orderByName = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +42,7 @@ class HomepageViewController: UIViewController {
         activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
             case "homepageToGameDetail":
