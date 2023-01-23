@@ -10,6 +10,7 @@ import Foundation
 class HomepageViewModel: HomepageViewModelProtocol {
     var delegate: HomepageViewModelDelegate?
     var popularGames: [Result]?
+    var orderGames: [Result]?
     
     func fetchPopularGames() {
         NetworkManager.getPopularGames { [weak self] popularGames, error in
@@ -20,6 +21,7 @@ class HomepageViewModel: HomepageViewModelProtocol {
                 return 
             }
             game.popularGames = popularGames
+            game.orderGames = popularGames
             game.delegate?.didGamesLoad()
         }
     }
@@ -35,6 +37,19 @@ class HomepageViewModel: HomepageViewModelProtocol {
     func getGameId(at index: Int) -> Int? {
         return popularGames?[index].id
     }
+    
+    func orderByName(status: Bool) {
+        if status {
+            popularGames = orderGames?.sorted { (first, second) in
+                return first.name ?? "-" < second.name ?? "-"
+            }
+        } else {
+            popularGames = orderGames?.sorted { (first, second) in
+                return first.id ?? 0 < second.id ?? 0
+            }
+        }
+        delegate?.didGamesLoad()
+    }
 }
 
 protocol HomepageViewModelProtocol {
@@ -43,6 +58,7 @@ protocol HomepageViewModelProtocol {
     func getGames(at index: Int) -> Result?
     func getPopularGamesCount() -> Int
     func getGameId(at index: Int) -> Int?
+    func orderByName(status: Bool)
 }
 
 protocol HomepageViewModelDelegate: AnyObject {
