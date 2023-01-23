@@ -9,6 +9,8 @@ import UIKit
 
 class HomepageViewController: UIViewController {
     
+    @IBOutlet weak var apiKeyErrorLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var gamesTableView: UITableView! {
         didSet {
             gamesTableView.delegate = self
@@ -22,8 +24,9 @@ class HomepageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        apiKeyErrorLabel.isHidden = true
         viewModel.delegate = self
+        activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,5 +68,9 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomepageViewController: HomepageViewModelDelegate {
     func didGamesLoad() {
         gamesTableView.reloadData()
+        activityIndicator.stopAnimating()
+        if viewModel.getPopularGamesCount() == 0 {
+            apiKeyErrorLabel.isHidden = false
+        }
     }
 }
