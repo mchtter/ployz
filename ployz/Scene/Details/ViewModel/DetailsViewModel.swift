@@ -38,7 +38,6 @@ final class DetailsViewModel: DetailsViewModelProtocol {
     func favoriteHandler() -> Bool? {
         if let gameId = gameDetails?.id {
             if let isFavorite = isFavoriteGame(gameId) {
-                print(isFavorite)
                 if isFavorite { return unlikeGame() }
                 return likeGame()
             }
