@@ -166,6 +166,7 @@
 				A4C0FB8B2974344500B563BE /* Homepage */,
 				A41ADBC32978756400EBB2E9 /* Details */,
 				A4C0FB952974369A00B563BE /* Favorites */,
+				A4D1465729803B2300CE1275 /* Notes */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -240,6 +241,13 @@
 				A4C0FB992974395100B563BE /* FavoritesModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A4D1465729803B2300CE1275 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

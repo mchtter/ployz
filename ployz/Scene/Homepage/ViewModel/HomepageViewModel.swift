@@ -26,6 +26,20 @@ class HomepageViewModel: HomepageViewModelProtocol {
         }
     }
     
+    func searchGames(_ searchParameter: String) {
+        NetworkManager.searchGames(searchText: searchParameter) { [weak self] popularGames, error in
+            guard let game = self else { return }
+            if let error {
+                NotificationCenter.default.post(name: NSNotification.Name("searchGamesErrorMessage"), object: error.localizedDescription)
+                game.delegate?.didGamesLoad()
+                return
+            }
+            game.popularGames = popularGames
+            game.orderGames = popularGames
+            game.delegate?.didGamesLoad()
+        }
+    }
+    
     func getGames(at index: Int) -> Result? {
         return popularGames?[index]
     }
@@ -55,6 +69,7 @@ class HomepageViewModel: HomepageViewModelProtocol {
 protocol HomepageViewModelProtocol {
     var delegate: HomepageViewModelDelegate? { get set }
     func fetchPopularGames()
+    func searchGames(_ searchParameter: String)
     func getGames(at index: Int) -> Result?
     func getPopularGamesCount() -> Int
     func getGameId(at index: Int) -> Int?

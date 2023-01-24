@@ -8,8 +8,8 @@
 import Foundation
 
 class GlobalVariables {
-    static let sharedInstance = GlobalVariables()
-    private init(){}
+    static let store = GlobalVariables()
     
     var isFavoriteChanged = false
+    var isSearchActive = false
 }

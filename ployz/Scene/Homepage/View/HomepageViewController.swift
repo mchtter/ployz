@@ -9,7 +9,10 @@ import UIKit
 
 class HomepageViewController: UIViewController {
     var viewModel: HomepageViewModelProtocol = HomepageViewModel()
+    let searchController = UISearchController(searchResultsController: nil)
     var orderByName = false
+    var lastScheduledSearch: Timer?
+    var searchText: String = ""
     
     @IBOutlet weak var orderButton: UIBarButtonItem!
     @IBOutlet weak var apiKeyErrorLabel: UILabel!
@@ -37,10 +40,22 @@ class HomepageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
         apiKeyErrorLabel.isHidden = true
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else {
+            return
+        }
+        self.searchText = searchText
+        lastScheduledSearch?.invalidate()
+        lastScheduledSearch = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.startTyping), userInfo: searchText, repeats: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,5 +101,20 @@ extension HomepageViewController: HomepageViewModelDelegate {
         if viewModel.getPopularGamesCount() == 0 {
             apiKeyErrorLabel.isHidden = false
         }
+    }
+}
+
+extension HomepageViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    @objc func startTyping() {
+        if searchText == "" {
+            GlobalVariables.store.isSearchActive = false
+            viewModel.fetchPopularGames()
+        } else {
+            GlobalVariables.store.isSearchActive = true
+            didSearchGame()
+        }
+    }
+    func didSearchGame() {
+        viewModel.searchGames(searchText)
     }
 }

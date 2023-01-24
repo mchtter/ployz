@@ -53,7 +53,7 @@ final class DetailsViewModel: DetailsViewModelProtocol {
     private func likeGame() -> Bool {
         if let gameId = gameDetails?.id, let imageId = URL(string: gameDetails?.backgroundImage ?? "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg")?.lastPathComponent{
             guard FavoritesCoreData.shared.setFavorite(gameId: gameId, imageId: imageId) != nil else {return !true}
-            GlobalVariables.sharedInstance.isFavoriteChanged = true
+            GlobalVariables.store.isFavoriteChanged = true
             return true
         }
         return !true
@@ -62,7 +62,7 @@ final class DetailsViewModel: DetailsViewModelProtocol {
     private func unlikeGame() -> Bool {
         if let gameId = gameDetails?.id{
             guard FavoritesCoreData.shared.removeFavoriteGameById(id: gameId) != nil else {return !false}
-            GlobalVariables.sharedInstance.isFavoriteChanged = true
+            GlobalVariables.store.isFavoriteChanged = true
             return false
         }
         return !false
