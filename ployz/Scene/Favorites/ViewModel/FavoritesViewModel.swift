@@ -13,7 +13,7 @@ class FavoritesViewModel: FavoritesViewModelProtocol {
     var games: [GameDetailsModel]?
     
     func getFavorites() {
-        GlobalVariables.sharedInstance.isFavoriteChanged = false
+        GlobalVariables.store.isFavoriteChanged = false
         games = [GameDetailsModel]()
         favorites = FavoritesCoreData.shared.getFavorite()
         var favCounter = favorites.count
