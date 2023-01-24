@@ -35,11 +35,44 @@ Run Debug sekmesinde bulunan Environment Variables'ın altına ekleyebilirsiniz.
 
 Anasayfa
 -----
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/iavvweh.png)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/9kq2sfb.png)
+
+Sıralama
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/r3jewfe.png)
+
+Arama
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/hjzrimy.png)
+
+Sayfalama
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/1v4yyrg.png)
+
+Sayfalama
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/72j6ff2.png)
+
+Sayfalama
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/eca4lgl.png)
 
 Favoriler
 -----
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/1nnytvv.png)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/qqh014y.png)
+
+Detay Sayfası - Favori Silme
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/rptqy10.png)
+
+Detay Sayfası - Favori Ekleme
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/8ff30av.png)
+
+Yükleniyor - (Activity Indicator)
+-----
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/qrobz52.png)
+
 Favoriler Boş
 -----
 ![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/j4vxq95.png)
