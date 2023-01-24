@@ -13,13 +13,13 @@ final class DetailsViewModel: DetailsViewModelProtocol {
     
     func fetchGameDetails(_ gameId: Int) {
         NetworkManager.getGameDetails(gameId: gameId) { [weak self] game, error in
-            guard let self = self else { return }
+            guard let _ = self else { return }
             
             if game?.id == nil {
                 NotificationCenter.default.post(name: NSNotification.Name("gameDetailsErrorMessage"), object: error?.localizedDescription)
             }
-            self.gameDetails = game
-            self.delegate?.didGameLoad()
+            self?.gameDetails = game
+            self?.delegate?.didGameLoad()
         }
     }
     

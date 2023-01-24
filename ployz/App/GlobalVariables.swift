@@ -12,4 +12,7 @@ class GlobalVariables {
     
     var isFavoriteChanged = false
     var isSearchActive = false
+    var homepageTableSize = 10
+//    var homepageTablePage = 1
+//    var paginationMode = false
 }

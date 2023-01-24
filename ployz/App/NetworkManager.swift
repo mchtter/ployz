@@ -10,7 +10,7 @@ import Alamofire
 
 class NetworkManager {
     static func getPopularGames(completionHandler: @escaping ([Result]?, Error?) -> Void) {
-        let requestURL = "\(ProcessInfo.processInfo.environment["API_URL"]!)/lists/popular?page_size=25&page=1&key=\(ProcessInfo.processInfo.environment["API_KEY"]!)"
+        let requestURL = "\(ProcessInfo.processInfo.environment["API_URL"]!)/lists/popular?page_size=\(GlobalVariables.store.homepageTableSize)&key=\(ProcessInfo.processInfo.environment["API_KEY"]!)"
         NetworkManager.responseHandler(requestURL: requestURL, responseType: PopularGames.self) { responseModel, error in
             completionHandler(responseModel?.results, error)
         }
@@ -22,7 +22,7 @@ class NetworkManager {
     }
     
     static func searchGames(searchText: String, completionHandler: @escaping ([Result]?, Error?) -> Void) {
-        let requestURL = "\(ProcessInfo.processInfo.environment["API_URL"]!)?&search=\(searchText)&page_size=25&page=1&key=\(ProcessInfo.processInfo.environment["API_KEY"]!)"
+        let requestURL = "\(ProcessInfo.processInfo.environment["API_URL"]!)?search=\(searchText)&search_precise=true&page_size=\(GlobalVariables.store.homepageTableSize)&key=\(ProcessInfo.processInfo.environment["API_KEY"]!)"
         NetworkManager.responseHandler(requestURL: requestURL, responseType: PopularGames.self) { responseModel, error in
             completionHandler(responseModel?.results, error)
         }

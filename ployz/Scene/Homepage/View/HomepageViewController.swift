@@ -55,7 +55,7 @@ class HomepageViewController: UIViewController {
         }
         self.searchText = searchText
         lastScheduledSearch?.invalidate()
-        lastScheduledSearch = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.startTyping), userInfo: searchText, repeats: false)
+        lastScheduledSearch = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.startTyping), userInfo: searchText, repeats: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,6 +92,18 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == viewModel.getPopularGamesCount() && !(GlobalVariables.store.homepageTableSize > viewModel.getPopularGamesCount()) {
+            GlobalVariables.store.homepageTableSize += 10
+//            GlobalVariables.store.homepageTablePage += 1
+//            GlobalVariables.store.paginationMode = true
+            if GlobalVariables.store.isSearchActive {
+                viewModel.searchGames(searchText)
+            } else {
+                viewModel.fetchPopularGames()
+            }
+        }
+    }
 }
 
 extension HomepageViewController: HomepageViewModelDelegate {
@@ -100,16 +112,24 @@ extension HomepageViewController: HomepageViewModelDelegate {
         activityIndicator.stopAnimating()
         if viewModel.getPopularGamesCount() == 0 {
             apiKeyErrorLabel.isHidden = false
+        } else if viewModel.getPopularGamesCount() == 0 && GlobalVariables.store.isSearchActive {
+            apiKeyErrorLabel.text = "Sonuç Bulunamadı"
+            apiKeyErrorLabel.isHidden = false
+        } else {
+            apiKeyErrorLabel.isHidden = true
         }
     }
 }
 
 extension HomepageViewController: UISearchResultsUpdating, UISearchBarDelegate {
     @objc func startTyping() {
+        activityIndicator.startAnimating()
         if searchText == "" {
+            GlobalVariables.store.homepageTableSize = 10
             GlobalVariables.store.isSearchActive = false
             viewModel.fetchPopularGames()
         } else {
+            GlobalVariables.store.homepageTableSize = 10
             GlobalVariables.store.isSearchActive = true
             didSearchGame()
         }

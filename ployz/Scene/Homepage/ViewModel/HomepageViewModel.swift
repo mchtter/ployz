@@ -10,33 +10,28 @@ import Foundation
 class HomepageViewModel: HomepageViewModelProtocol {
     var delegate: HomepageViewModelDelegate?
     var popularGames: [Result]?
-    var orderGames: [Result]?
     
     func fetchPopularGames() {
-        NetworkManager.getPopularGames { [weak self] popularGames, error in
-            guard let game = self else { return }
+        NetworkManager.getPopularGames { [weak self] fetchedGames, error in
+            guard let _ = self else { return }
             if let error {
                 NotificationCenter.default.post(name: NSNotification.Name("popularGamesErrorMessage"), object: error.localizedDescription)
-                game.delegate?.didGamesLoad()
                 return 
             }
-            game.popularGames = popularGames
-            game.orderGames = popularGames
-            game.delegate?.didGamesLoad()
+            self?.popularGames = fetchedGames
+            self?.delegate?.didGamesLoad()
         }
     }
     
     func searchGames(_ searchParameter: String) {
-        NetworkManager.searchGames(searchText: searchParameter) { [weak self] popularGames, error in
-            guard let game = self else { return }
+        NetworkManager.searchGames(searchText: searchParameter) { [weak self] searchGame, error in
+            guard let _ = self else { return }
             if let error {
                 NotificationCenter.default.post(name: NSNotification.Name("searchGamesErrorMessage"), object: error.localizedDescription)
-                game.delegate?.didGamesLoad()
                 return
             }
-            game.popularGames = popularGames
-            game.orderGames = popularGames
-            game.delegate?.didGamesLoad()
+            self?.popularGames = searchGame
+            self?.delegate?.didGamesLoad()
         }
     }
     
@@ -54,11 +49,11 @@ class HomepageViewModel: HomepageViewModelProtocol {
     
     func orderByName(status: Bool) {
         if status {
-            popularGames = orderGames?.sorted { (first, second) in
+            popularGames = popularGames?.sorted { (first, second) in
                 return first.name ?? "-" < second.name ?? "-"
             }
         } else {
-            popularGames = orderGames?.sorted { (first, second) in
+            popularGames = popularGames?.sorted { (first, second) in
                 return first.id ?? 0 < second.id ?? 0
             }
         }
