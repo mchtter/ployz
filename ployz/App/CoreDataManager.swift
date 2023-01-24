@@ -86,5 +86,41 @@ class FavoritesCoreData {
             return nil
         }
     }
+}
+
+class NotesCoreData {
+    static let shared = NotesCoreData()
+    let context: NSManagedObjectContext!
     
+    init() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        context = appDelegate.persistentContainer.viewContext
+    }
+    
+    func addNote(gameId: Int, gameName: String, noteDetail: String) -> Bool? {
+        let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context)!
+        let note = NSManagedObject(entity: entity, insertInto: context)
+        note.setValue(gameId, forKey: "gameId")
+        note.setValue(gameName, forKey: "gameName")
+        note.setValue(noteDetail, forKey: "noteDetail")
+        
+        do {
+            try context.save()
+            return true
+        } catch let error as NSError {
+            NotificationCenter.default.post(name: NSNotification.Name("detailGamesErrorMessage"), object: error.localizedDescription)
+        }
+        return nil
+    }
+    
+    func getNotes() -> [Notes] {
+        let getRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
+        do {
+            let notes = try context.fetch(getRequest)
+            return notes as! [Notes]
+        } catch let error as NSError {
+            NotificationCenter.default.post(name: NSNotification.Name("notesErrorMessage"), object: error.localizedDescription)
+        }
+        return []
+    }
 }
