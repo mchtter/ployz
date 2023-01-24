@@ -9,7 +9,10 @@ import UIKit
 
 class HomepageViewController: UIViewController {
     var viewModel: HomepageViewModelProtocol = HomepageViewModel()
+    let searchController = UISearchController(searchResultsController: nil)
     var orderByName = false
+    var lastScheduledSearch: Timer?
+    var searchText: String = ""
     
     @IBOutlet weak var orderButton: UIBarButtonItem!
     @IBOutlet weak var apiKeyErrorLabel: UILabel!
@@ -37,10 +40,22 @@ class HomepageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
         apiKeyErrorLabel.isHidden = true
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.fetchPopularGames()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else {
+            return
+        }
+        self.searchText = searchText
+        lastScheduledSearch?.invalidate()
+        lastScheduledSearch = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.startTyping), userInfo: searchText, repeats: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,6 +92,18 @@ extension HomepageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == viewModel.getPopularGamesCount() && !(GlobalVariables.store.homepageTableSize > viewModel.getPopularGamesCount()) {
+            GlobalVariables.store.homepageTableSize += 10
+//            GlobalVariables.store.homepageTablePage += 1
+//            GlobalVariables.store.paginationMode = true
+            if GlobalVariables.store.isSearchActive {
+                viewModel.searchGames(searchText)
+            } else {
+                viewModel.fetchPopularGames()
+            }
+        }
+    }
 }
 
 extension HomepageViewController: HomepageViewModelDelegate {
@@ -85,6 +112,29 @@ extension HomepageViewController: HomepageViewModelDelegate {
         activityIndicator.stopAnimating()
         if viewModel.getPopularGamesCount() == 0 {
             apiKeyErrorLabel.isHidden = false
+        } else if viewModel.getPopularGamesCount() == 0 && GlobalVariables.store.isSearchActive {
+            apiKeyErrorLabel.text = "Sonuç Bulunamadı"
+            apiKeyErrorLabel.isHidden = false
+        } else {
+            apiKeyErrorLabel.isHidden = true
         }
+    }
+}
+
+extension HomepageViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    @objc func startTyping() {
+        activityIndicator.startAnimating()
+        if searchText == "" {
+            GlobalVariables.store.homepageTableSize = 10
+            GlobalVariables.store.isSearchActive = false
+            viewModel.fetchPopularGames()
+        } else {
+            GlobalVariables.store.homepageTableSize = 10
+            GlobalVariables.store.isSearchActive = true
+            didSearchGame()
+        }
+    }
+    func didSearchGame() {
+        viewModel.searchGames(searchText)
     }
 }

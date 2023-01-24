@@ -33,11 +33,11 @@ class FavoritesViewController: UIViewController {
         viewModel.delegate = self
         activityIndicator.startAnimating()
         viewModel.getFavorites()
-        GlobalVariables.sharedInstance.isFavoriteChanged = false
+        GlobalVariables.store.isFavoriteChanged = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if GlobalVariables.sharedInstance.isFavoriteChanged {
+        if GlobalVariables.store.isFavoriteChanged {
             activityIndicator.startAnimating()
             viewModel.getFavorites()
         }
