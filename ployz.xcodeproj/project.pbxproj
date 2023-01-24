@@ -28,6 +28,11 @@
 		A4C0FBAA2974905700B563BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A4C0FBA92974905700B563BE /* Alamofire */; };
 		A4C0FBAC297496FD00B563BE /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0FBAB297496FD00B563BE /* GamesTableViewCell.swift */; };
 		A4C0FBAE2974A16D00B563BE /* GamesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C0FBAD2974A16D00B563BE /* GamesTableViewCell.xib */; };
+		A4D1465D298095F300CE1275 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1465C298095F300CE1275 /* NotesViewController.swift */; };
+		A4D1465F298095FE00CE1275 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D1465E298095FE00CE1275 /* NotesViewModel.swift */; };
+		A4D146612980961300CE1275 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D146602980961300CE1275 /* NotesModel.swift */; };
+		A4D146632980962100CE1275 /* NotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4D146622980962100CE1275 /* NotesTableViewCell.xib */; };
+		A4D146652980963200CE1275 /* NotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D146642980963200CE1275 /* NotesTableViewCell.swift */; };
 		A4E426BE297DCF1400C6BC49 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E426BD297DCF1400C6BC49 /* CoreDataManager.swift */; };
 		A4E426C0297DDA2F00C6BC49 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E426BF297DDA2F00C6BC49 /* GlobalVariables.swift */; };
 		A4E426C4297DF07900C6BC49 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E426C3297DF07900C6BC49 /* FavoritesTableViewCell.swift */; };
@@ -56,6 +61,11 @@
 		A4C0FB9F29747E7B00B563BE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A4C0FBAB297496FD00B563BE /* GamesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
 		A4C0FBAD2974A16D00B563BE /* GamesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesTableViewCell.xib; sourceTree = "<group>"; };
+		A4D1465C298095F300CE1275 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		A4D1465E298095FE00CE1275 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		A4D146602980961300CE1275 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		A4D146622980962100CE1275 /* NotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesTableViewCell.xib; sourceTree = "<group>"; };
+		A4D146642980963200CE1275 /* NotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewCell.swift; sourceTree = "<group>"; };
 		A4E426BD297DCF1400C6BC49 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A4E426BF297DDA2F00C6BC49 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		A4E426C3297DF07900C6BC49 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
@@ -246,8 +256,37 @@
 		A4D1465729803B2300CE1275 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				A4D1465B2980957100CE1275 /* Model */,
+				A4D1465A2980956D00CE1275 /* View */,
+				A4D146592980956400CE1275 /* ViewModel */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		A4D146592980956400CE1275 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1465E298095FE00CE1275 /* NotesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A4D1465A2980956D00CE1275 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4D1465C298095F300CE1275 /* NotesViewController.swift */,
+				A4D146622980962100CE1275 /* NotesTableViewCell.xib */,
+				A4D146642980963200CE1275 /* NotesTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A4D1465B2980957100CE1275 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4D146602980961300CE1275 /* NotesModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4C0FB81297416E300B563BE /* LaunchScreen.storyboard in Resources */,
+				A4D146632980962100CE1275 /* NotesTableViewCell.xib in Resources */,
 				A4C0FB7E297416E300B563BE /* Assets.xcassets in Resources */,
 				A4C0FB79297416E200B563BE /* Main.storyboard in Resources */,
 				A4E426C6297DF12200C6BC49 /* FavoritesTableViewCell.xib in Resources */,
@@ -339,13 +379,17 @@
 				A4C0FB94297435CB00B563BE /* HomepageViewModel.swift in Sources */,
 				A41ADBC8297875B900EBB2E9 /* DetailsModel.swift in Sources */,
 				A4C0FB9E297439EF00B563BE /* FavoritesViewModel.swift in Sources */,
+				A4D1465D298095F300CE1275 /* NotesViewController.swift in Sources */,
+				A4D146652980963200CE1275 /* NotesTableViewCell.swift in Sources */,
 				A41ADBCA297875CE00EBB2E9 /* DetailsViewController.swift in Sources */,
 				A4C0FBAC297496FD00B563BE /* GamesTableViewCell.swift in Sources */,
 				A4C0FB72297416E200B563BE /* AppDelegate.swift in Sources */,
 				A4C0FB9C297439D300B563BE /* FavoritesViewController.swift in Sources */,
 				A4C0FB74297416E200B563BE /* SceneDelegate.swift in Sources */,
+				A4D146612980961300CE1275 /* NotesModel.swift in Sources */,
 				A41ADBCC297875FE00EBB2E9 /* DetailsViewModel.swift in Sources */,
 				A4C0FB902974356A00B563BE /* HomepageModel.swift in Sources */,
+				A4D1465F298095FE00CE1275 /* NotesViewModel.swift in Sources */,
 				A4E426BE297DCF1400C6BC49 /* CoreDataManager.swift in Sources */,
 				A4C0FB9A2974395100B563BE /* FavoritesModel.swift in Sources */,
 				A4E426C0297DDA2F00C6BC49 /* GlobalVariables.swift in Sources */,
