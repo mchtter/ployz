@@ -75,10 +75,10 @@ Yükleniyor - (Activity Indicator)
 
 Favoriler Boş
 -----
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/j4vxq95.png)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/b3ox4mk.png)
 Anasayfa API Anahtarsız
 -----
-![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/om57oku.png)
+![Uygulama Ekran Görüntüsü](https://i.hizliresim.com/jrslh9z.png)
 
 ## Yazarlar ve Teşekkür
 
